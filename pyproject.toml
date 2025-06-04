@@ -3,16 +3,22 @@ requires = ["setuptools>=42", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "mooLLM"
-version = "0.1.0"
+name = "HOLLM"
+version = "1.0.0"
 description = "HOLLM: Improving LLM-based Global Optimization with Search Space Partitioning"
 readme = "README.md"
 requires-python = ">=3.11"
 license = {text = "MIT"}
 authors = [
-    {name = "Anonym Authors"},
+    {name = "Andrej Schwanke"},
+    {name = "Lyubomir Ivanov"},
+    {name = "Arber Zela"},
+    {name = "David Salinas"},
+    {name = "Fabio Ferreira"},
+    {name = "Aaron Klein"},
+    {name = "Frank Hutter"},
 ]
-keywords = ["multi-objective", "neural architecture search", "llm", "optimization"]
+keywords = ["llm", "optimization", "black-box optimization", "hyperparameter optimization", "global optimization", "search space partitioning"]
 classifiers = [
     "Development Status :: 3 - Alpha",
     "Intended Audience :: Science/Research",
@@ -45,4 +51,4 @@ dependencies = [
 ]
 
 [tool.setuptools]
-packages = ["mooLLM"]
+packages = ["HOLLM"]
