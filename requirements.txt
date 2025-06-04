@@ -15,11 +15,9 @@ torch
 ConfigSpace
 pymoo==0.6.0
 paretoset
-black
 ConfigSpace
 google-generativeai
 groq
-whittle
 scipy
 scikit_learn
 autoawq
