@@ -198,7 +198,7 @@ class PromptBuilder:
 
         icl_examples = []
         for config, fval in zip(configs, fvals):
-            fval = {key: round(value, 6) for key, value in fval.items()}
+            fval = {key: -round(value, 6) for key, value in fval.items()}
 
             configuration = self.icl_example_template.safe_substitute(
                 **{
@@ -230,7 +230,7 @@ class PromptBuilder:
 
         icl_examples = []
         for config, fval in zip(configs, fvals):
-            fval = {key: round(value, 6) for key, value in fval.items()}
+            fval = {key: -round(value, 6) for key, value in fval.items()}
             if self.shuffle_icl_columns:
                 config = self._shuffle_config_columns(config)
             configuration = self.icl_example_template.safe_substitute(

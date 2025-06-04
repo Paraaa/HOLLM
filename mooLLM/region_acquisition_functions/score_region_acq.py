@@ -28,14 +28,6 @@ class ScoreRegionACQ(RegionACQ):
         ucb_bonus = []
         volume = []
 
-        # Determine sign flip based on metrics_targets
-        sign = 1
-
-        if self.metrics_targets and isinstance(self.metrics_targets, list):
-            if self.metrics_targets[0] == "max":
-                sign = 1
-            elif self.metrics_targets[0] == "min":
-                sign = -1
 
         if len(self.metrics_targets) > 1:
             logger.warning(
@@ -50,7 +42,6 @@ class ScoreRegionACQ(RegionACQ):
             cell_points_fvals = np.array(
                 [list(fvals.values()) for fvals in region.points_fvals]
             )
-            cell_points_fvals = sign * cell_points_fvals
             dim = len(region.boundaries)
             logger.debug(f"Number of dimensions: {dim}")
             n_l = len(region.points)
