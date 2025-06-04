@@ -1,0 +1,36 @@
+
+# Multi-objective optimization task
+
+## Problem Description
+Atom set: Use standard drug-like atoms including carbon, hydrogen, nitrogen, oxygen, sulfur, phosphorus, halogens (fluorine, chlorine, bromine, iodine), and optionally silicon.
+
+pH-dependent forms: Generate protonated and tautomeric states observable at physiological pH (6–8) with at least 20% relative population; optionally generate forms for other pH ranges as needed.
+
+3D Conformation: Build multiple 3D conformers per molecule using an energy window (e.g., 12.5 kcal/mol), limit to a maximum number of conformers (e.g., up to 600), and enforce diversity with an RMS threshold (e.g., 0.80).
+
+Property Calculation: Compute key physicochemical properties such as logP, polar surface area, molecular weight, numbers of hydrogen-bond donors and acceptors, and desolvation energies.
+
+Diversity and Availability: Ensure chemical diversity using clustering methods based on Tanimoto similarity and include compounds with verified vendor availability.
+
+## Constraints
+The allowable ranges for the hyperparameters are:
+$constraints
+
+## Previously Evaluated Architectures
+Below are examples of architectures that have been evaluated, showing their operations and performance metrics:
+
+$ICL_examples
+
+## Your Task
+Generate $target_number_of_candidates new architecture configurations that:
+1. Are likely to achieve lower $metrics than the examples
+2. Are different from all previously evaluated architectures
+3. Satisfy all the specified constraints
+
+## Output Format
+Each configuration has to follow this format:
+
+$candidate_sampler_response_format
+
+Provide your response in a JSON list containing each proposed configuration.
+Return only the required JSON list output without additional text.

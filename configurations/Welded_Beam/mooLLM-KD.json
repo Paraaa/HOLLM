@@ -1,0 +1,67 @@
+{
+    "optimization_method": "SpacePartitioning",
+    "space_partitioning_settings": {
+        "top_k": 4,
+        "partitions_per_trial": 5,
+        "use_clustering": false,
+        "region_acquisition_strategy": "VIS-HE-SCHEDULE",
+        "partitioning_strategy": "kdtree",
+        "alpha": 0.7,
+        "scheduler_settings": {
+            "scheduler": "EPSILON_DECAY_SCHEDULER",
+            "decay_rate": 0.05,
+            "initial_value": 1,
+            "min_value": 0.01
+        },
+        "boundary_box": {
+            "x0": [0.125, 5.0],
+            "x1": [0.1, 10.0],
+            "x2": [0.1, 10.0],
+            "x3": [0.1, 10.0]
+          }
+    },
+    "n_trials": 20,
+    "input_cost_per_1000_tokens": 0.000150,
+    "output_cost_per_1000_tokens": 0.000600,
+    "initial_samples": 5,
+    "candidates_per_request": 5,
+    "max_candidates_per_trial": 5,
+    "evaluations_per_request": 5,
+    "max_evaluations_per_trial": 5,
+    "max_context_configs": 110,
+    "max_requests_per_minute": 5000,
+    "max_tokens_per_minute": 4000000,
+    "benchmark": "WELDED_BEAM",
+    "benchmark_settings": {
+      "problem_id": "welded_beam"
+    },
+    "warmstarter": "RANDOM_WARMSTARTER",
+    "candidate_sampler": "LLM_SAMPLER",
+    "acquisition_function": "HypervolumeImprovement",
+    "surrogate_model": "mooLLM_SUR_BATCH",
+    "shuffle_icl_columns": false,
+    "shuffle_icl_rows": true,
+    "use_few_shot_examples": true,
+    "context_limit_strategy": "LastN",
+
+    "warmstarting_prompt_template": "./prompt_templates/WELDED_BEAM/mooLLM-VP/warmstarting.txt",
+    "candidate_sampler_prompt_template": "./prompt_templates/WELDED_BEAM/mooLLM-VP/candidate_sampler.txt",
+    "surrogate_model_prompt_template": "./prompt_templates/WELDED_BEAM/mooLLM-VP/surrogate_model.txt",
+
+    "metrics": ["F1", "F2"], 
+    "prompt": {
+      "problem_description": "",
+      "constraints": {
+        "x1": [0.125, 5.0],
+        "x2": [0.1, 10.0],
+        "x3": [0.1, 10.0],
+        "x4": [0.1, 10.0]
+      },
+      "metrics": "F1 and F2",
+      "icl_examples_template": "Configuration: $configuration \nF1: $F1, F2: $F2\n",
+      "icl_example_template":  "{\"x0\": $x0, \"x1\": $x1, \"x2\": $x2, \"x3\": $x3}",
+      "warmstarting_response_format": "{\"x0\": ?, \"x1\": ?, \"x2\": ?, \"x3\": ?}",
+      "candidate_sampler_response_format": "{\"x0\": ?, \"x1\": ?, \"x2\": ?, \"x3\": ?}",
+      "surrogate_model_response_format": "{\"F1\": ?, \"F2\": ?}"
+    }
+}

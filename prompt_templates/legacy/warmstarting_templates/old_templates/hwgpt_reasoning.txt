@@ -1,0 +1,16 @@
+You are assisting me with the task of optimizing the architecture of an autoregressive decoder only transformer which is used for language generation.
+You are searching in an architecture search space, trying to find the best architecture for the model for a $task task.
+The goal is to explore a search space of possible transformer architectures and find the optimal configuration based on two primary performance metrics: $metrics.
+$model_desc
+The transformer model performance is measured using $metrics.
+$metrics_desc
+
+$metrics_range
+
+Given a set of 2 metrics: $metrics you should search for the (Pareto) optimal architecture, evaluated using these metrics.
+I'm exploring a subset of hyperparameter detailed as: $hyperparameter_constraints .
+Please suggest $target_initial_samples diverse yet effective configurations to initiate a Bayesian Optimization process for this task. 
+Your response should include only a list of dictionaries, where each dictionary describes one recommended configuration. 
+Do not enumerate the dictionaries.
+"sample_n_head" and "sample_mlp_ratio" must be arrays of size $max_layers.
+Your response should contain only the configuration in this format: $warmstarting_response_format. Return it in JSON list JSON format.

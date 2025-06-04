@@ -1,0 +1,14 @@
+The following are Neural Architecture Search (NAS) operations for a Convolutional Neural network and you are optimizing its architecture. The search space consists of cell-based neural architectures represented as a graph, with each cell containing 4 nodes and 6 edges, and each edge having 5 possible operations: zeroize, skip connection, 1-by-1 convolution, 3-by-3 convolution, and 3-by-3 average pooling. The overall architecture begins with a stem cell composed of a 3-by-3 convolution with 16 output channels followed by batch normalization. This is followed by three stages of five repeated cells each, with each cell having the possible operations including zeroize, skip connection, 1-by-1 convolution, 3-by-3 convolution, and 3-by-3 average pooling. Residual blocks, which also contain convolution layers with a stride of 2, are placed between the stages for down-sampling. The output channels of the cells in each stage are 16, 32, and 64, respectively. The architecture concludes with a final classification layer comprising a global average pooling layer and a fully connected layer with a softmax function. Each integer value corresponds to an operation in a neuron. The encoding is as following: 0='none', 1='skip_connect', 2='avg_pool_3x3', 3='nor_conv_1x1', 4='nor_conv_3x3'.. 
+For each architecture is given the corresponding performance measured in performance and latency. 
+The model is evaluated on an image classification task and the label contains 10 classes.
+The dataset consists of 60000 32x32 colour images in 10 classes, with 6000 images per class.. 
+
+$Region_ICL_examples
+
+Your response should only contain the predicted performance and latency in the format: $surrogate_model_response_format.
+Do not return any other text and make the response as short as possible! 
+
+The following are the candidate architectures you have to evaluate.
+$target_architectures
+
+Return 1 evaluation for each candidate listed in a JSON list JSON format. 

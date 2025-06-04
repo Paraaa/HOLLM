@@ -1,0 +1,44 @@
+{
+    "optimization_method": "mooLLM",
+    "average_model_response_time_in_seconds": 0.81,
+    "input_cost_per_1000_tokens": 0.000150,
+    "output_cost_per_1000_tokens": 0.000600,
+    "n_trials": 100,
+    "initial_samples": 5,
+    "candidates_per_request": 5,
+    "max_candidates_per_trial": 5,
+    "evaluations_per_request": 5,
+    "max_evaluations_per_trial": 5,
+    "retry_threshold": 10,
+    "max_context_configs": 110,
+    "max_requests_per_minute": 5000,
+    "max_tokens_per_minute": 2000000,
+    "benchmark": "ZINC256",
+    "benchmark_settings": {
+      "problem_id": "ZINC256"
+    },
+    "warmstarter": "RANDOM_WARMSTARTER",
+    "candidate_sampler": "LLM_SAMPLER",
+    "acquisition_function": "HypervolumeImprovement",
+    "surrogate_model": "mooLLM_SUR_BATCH",
+    "warmstarting_prompt_template": "./prompt_templates/ZINC256/mooLLM/warmstarting.txt",
+    "candidate_sampler_prompt_template": "./prompt_templates/ZINC256/mooLLM/candidate_sampler.txt",
+    "surrogate_model_prompt_template": "./prompt_templates/ZINC256/mooLLM/surrogate_model.txt",
+    "shuffle_icl_columns": false,
+    "shuffle_icl_rows": true,
+    "use_few_shot_examples": false,
+    "context_limit_strategy": "LastN",
+    "metrics": ["logP", "qed"],
+    "prompt": {
+      "problem_description": "",
+      "constraints": {
+        "atoms": ["H", "C", "N", "O", "F", "S", "P", "Si", "Cl", "Br"]
+      },
+      "metrics": "higher logP and higher qed",
+      "icl_examples_template": "Configuration: $configuration \nlogP: $logP, qed: $qed\n",
+      "icl_example_template":  "{\"smiles\": $smiles}",
+      "warmstarting_response_format": "{\"smiles\": $smiles}",
+      "candidate_sampler_response_format": "{\"smiles\": $smiles}",
+      "surrogate_model_response_format": "{\"logP\": ?, \"qed\": ?}"
+    }
+  }

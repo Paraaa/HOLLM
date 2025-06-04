@@ -1,0 +1,19 @@
+
+You are tasked with solving a multi-objective optimization problem that requires finding solutions balancing two objectives. The problem involves the following characteristics:
+1. Multiple Objectives: There are two objective functions, f1 and f2, which need to be optimized simultaneously. These objectives are conflicting, meaning improvement in one may lead to deterioration in the other.
+2. Pareto Optimality: The goal is to find a diverse set of non-dominated solutions on the Pareto front. A solution x is considered non-dominated if no other solution is better in all objectives.
+3. Smoothness: The objective functions are continuous and nonlinear, and their behavior is not explicitly given but follows a well-defined mathematical structure.
+
+The allowable ranges for the hyperparameter are: $hyperparameter_constraints
+There are two objective functions, f1 and f2, which need to be optimized simultaneously. These objectives are conflicting, meaning improvement in one may lead to deterioration in the other. Lower F1 and lower F2 is better.
+
+$Region_ICL_examples
+
+
+
+Your response should only contain the predicted $metrics in the format: $surrogate_model_response_format.
+
+Do not return any other text and make the response as short as possible! 
+The following are the candidate architectures you have to evaluate.
+$target_architectures
+Return 1 evaluation for each candidate listed in a JSON list JSON format. 

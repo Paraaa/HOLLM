@@ -1,0 +1,6 @@
+You are assisting me with automated machine learning using $model_desc for a $task task. 
+The $task performance is measured using $metrics. 
+The dataset has $num_samples samples with $tot_feats total features, of which $num_feats are numerical and $cat_feats are categorical.
+I’m exploring a subset of hyperparameters detailed as: $hyperparameter_constraints Please suggest $target_initial_samples diverse yet effective configurations to initiate a Bayesian Optimization process for this task. 
+Your response should include only a list of dictionaries, where each dictionary describes one recommended configuration. Do not enumerate the dictionaries. 
+Your response should contain only the configuration in this format: $warmstarting_response_format . Return it in JSON list JSON format.

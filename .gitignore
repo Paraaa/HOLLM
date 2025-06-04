@@ -1,0 +1,25 @@
+# Project related
+/baselines/std.out
+/checkpoints/*
+*.pyc
+input.txt
+/test/*
+
+# Cluster specific
+/hub/*
+stored_tokens
+token
+/mooLLM_cluster_results/*
+
+# vscode related
+*.code-workspace
+launch.json
+
+# Never remote this.
+env.py
+mooLLM.egg-info
+
+# Maybe logging files will be needed in the future to keep track in the github repo
+*.log
+*.mooLLM
+std.out

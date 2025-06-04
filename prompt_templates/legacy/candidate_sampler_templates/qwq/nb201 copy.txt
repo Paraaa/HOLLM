@@ -1,0 +1,10 @@
+The following are examples of performance of a $model_desc measured in $metrics and the corresponding neuron operations. The architectures with lower $metrics are better. Each integer value corresponds to an operation in a neuron. The encoding is as following: 0='none', 1='skip_connect', 2='avg_pool_3x3', 3='nor_conv_1x1', 4='nor_conv_3x3' The model is evaluated on a image $task task containing $n_classes classes. The task is CIFAR-10. The CIFAR-10 dataset consists of 60000 32x32 colour images in 10 classes, with 6000 images per class. The image dataset contains $num_samples samples and $tot_feats features ($cat_feats categorical, $num_feats numerical). The allowable ranges for the hyperparameters are: $hyperparameter_constraints
+
+$ICL_examples 
+
+Your task is to help me find a better architecture that has lower metrics than the observed configurations.
+
+The architecture should not be the same as any of the already evaluated architectures above.
+Your response should contain only the configuration in this format: ```json $candidate_sampler_response_format. ```
+Be concise in your thinking.
+Return $target_number_of_candidates samples in a JSON list JSON format. 

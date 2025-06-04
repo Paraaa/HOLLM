@@ -1,0 +1,13 @@
+#!/bin/bash
+# python plot_hv_over_time_nb201.py --data_path="./ablations/baselines" --save_dir_name="baselines"
+# python plot_hv_over_time_nb201.py --data_path="./ablations/baselines_fewer" --save_dir_name="baselines_fewer"
+# python plot_hv_over_time_nb201.py --data_path="./ablations/metrics_vs_no_metrics" --save_dir_name="metrics_vs_no_metrics"
+# python plot_hv_over_time_nb201.py --data_path="./ablations/sequential_vs_parallel" --save_dir_name="sequential_vs_parallel"
+# python plot_hv_over_time_nb201.py --data_path="./ablations/data" --save_dir_name="llm_approaches"
+# python plot_hv_over_time_nb201.py --data_path="./ablations/prompt_comparison" --save_dir_name="prompt_comparison"
+# python plot_hv_over_time_nb201.py --data_path="./ablations/prompt_comparison_gemini" --save_dir_name="prompt_comparison_gemini"
+# python plot_hv_over_time_nb201.py --data_path="./ablations/prompt_comparison_gpt" --save_dir_name="prompt_comparison_gpt"
+# python plot_hv_over_time_nb201.py --data_path="./ablations/sequential_vs_parallel_vs_surrogate_parallel" --save_dir_name="sequential_vs_parallel_vs_surrogate_parallel"
+# python plot_hv_over_time_nb201.py --data_path="./ablations/baselines_poster" --save_dir_name="baselines_poster"
+python plot_hv_over_time_nb201.py --data_path="./ablations/baselines_poster_minimal" --save_dir_name="baselines_poster_minimal"
+# python plot_hv_over_time_nb201.py --data_path="./ablations/deepseek_comparision" --save_dir_name="deepseek_comparision"
