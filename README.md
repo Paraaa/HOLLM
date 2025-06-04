@@ -5,7 +5,7 @@
 
 This repository contains the official implementation of [HOLLM](https://arxiv.org/abs/2505.21372v1) *(Hierarchical Optimization with Large Language Models)*. 
 
-## Installation (Python 3.11)****
+## Installation (Python 3.11)
 
 1.  Create a conda environment:
     ```bash
@@ -97,7 +97,7 @@ class YourBenchmark(BENCHMARK):
 
 
 ```python
-# You need to define a config for the builder to build the instance of the optimization strategy. Refer to the builder class, the synetune implementation for more details.
+# You need to define a config for the builder to build the instance of the optimization strategy. Refer to the builder class and the synetune implementation in synetune_utils.py for more details.
 config = {...}
 builder: Builder = Builder(config=config, benchmark=YourBenchmark())
 mooLLM: mooLLM = builder.build() # This returns a mooLLM instance
