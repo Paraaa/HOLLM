@@ -19,8 +19,6 @@ from mooLLM.settings import (
 )
 from mooLLM.optimization_strategy.optimization_strategy import OptimizationStrategy
 from mooLLM.optimization_strategy.mooLLM import mooLLM
-from mooLLM.optimization_strategy.tot_mooLLM import mooLLMToT
-from mooLLM.optimization_strategy.interval_mooLLM import mooLLMInterval
 from mooLLM.optimization_strategy.space_partitioning_mooLLM import (
     SpacePartitioningMOOLLM,
 )
