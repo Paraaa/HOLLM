@@ -100,8 +100,8 @@ class YourBenchmark(BENCHMARK):
 # You need to define a config for the builder to build the instance of the optimization strategy. Refer to the builder class and the synetune implementation in synetune_utils.py for more details.
 config = {...}
 builder: Builder = Builder(config=config, benchmark=YourBenchmark())
-mooLLM: mooLLM = builder.build() # This returns a mooLLM instance
-mooLLM.optimize() # Runs the optimization loop
+instance = builder.build() # This returns a optimization_strategy instance
+instance.optimize() # Runs the optimization loop
 ```
 
 A list of available setting for the config can be listed with:
