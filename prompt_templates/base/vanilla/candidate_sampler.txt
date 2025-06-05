@@ -3,7 +3,7 @@
 ## Problem Description
 You are tasked with solving a optimization problem that requires finding optimal solutions.
 
-- **Evaluation**: Configurations are measured by $metrics
+- **Evaluation**: Configurations are measured by $metrics (lower is better)
 
 ## Constraints
 The allowable ranges for the hyperparameters are:
@@ -18,7 +18,7 @@ $ICL_examples
 Generate $target_number_of_candidates new architecture configurations that:
 1. Are likely to achieve lower $metrics than the examples
 2. Are different from all previously evaluated architectures
-3. Satisfy all the specified constraints: $constraints
+3. Satisfy all the specified constraints $constraints
 
 ## Output Format
 Each configuration has to follow this format:
