@@ -6,14 +6,14 @@ import numpy as np
 import matplotlib
 import matplotlib.pyplot as plt
 from pymoo.indicators.hv import HV
-from mooLLM.utils.plot.plot_utils_nb201 import (
+from HOLLM.utils.plot.plot_utils_nb201 import (
     get_result_file_names,
     extract_metadata_from_result_file,
     normalize_data,
     get_min_max_metrics_from_observed_data,
 )
 
-from mooLLM.utils.plot.plot_settings import get_visuals
+from HOLLM.utils.plot.plot_settings import get_visuals
 
 
 plt.style.use("seaborn-v0_8-poster")

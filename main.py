@@ -7,8 +7,8 @@ import logging.config
 import numpy as np
 from pathlib import Path
 
-from mooLLM.utils.logger import LOGGING_CONFIG
-from mooLLM.builder import Builder
+from HOLLM.utils.logger import LOGGING_CONFIG
+from HOLLM.builder import Builder
 
 # This line sets the logging configuration
 logging.config.dictConfig(config=LOGGING_CONFIG)

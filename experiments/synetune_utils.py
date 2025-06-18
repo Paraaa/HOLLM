@@ -11,8 +11,8 @@ from typing import Dict, Optional, List, Tuple, Any
 
 from syne_tune.config_space import Domain, Float, Integer
 from syne_tune.optimizer.schedulers.searchers.utils import make_hyperparameter_ranges
-from mooLLM.builder import Builder
-from mooLLM.benchmarks.benchmark import BENCHMARK
+from HOLLM.builder import Builder
+from HOLLM.benchmarks.benchmark import BENCHMARK
 
 
 class SyneTuneBenchmark(BENCHMARK):

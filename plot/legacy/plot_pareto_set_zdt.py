@@ -5,9 +5,9 @@ import pandas as pd
 from paretoset import paretoset
 import matplotlib.pyplot as plt
 from pymoo.indicators.hv import HV
-from mooLLM.utils.plot.plot_utils_zdt import extract_metadata_from_result_file
+from HOLLM.utils.plot.plot_utils_zdt import extract_metadata_from_result_file
 from pymoo.problems import get_problem
-from mooLLM.utils.plot.plot_settings import get_visuals
+from HOLLM.utils.plot.plot_settings import get_visuals
 import matplotlib.colors as mcolors
 import numpy as np
 

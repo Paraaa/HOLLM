@@ -5,13 +5,13 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 from pymoo.indicators.hv import HV
-from mooLLM.utils.plot.plot_utils_zdt import (
+from HOLLM.utils.plot.plot_utils_zdt import (
     get_result_file_names,
     extract_metadata_from_result_file,
     normalize_data,
     get_min_max_metrics_from_observed_data,
 )
-from mooLLM.utils.plot.plot_settings import get_visuals
+from HOLLM.utils.plot.plot_settings import get_visuals
 
 
 def compute_hypervolume(df, reference_point):

@@ -1,5 +1,6 @@
 import itertools
 import logging
+import logging.config
 from argparse import ArgumentParser
 import numpy as np
 from tqdm import tqdm
@@ -15,7 +16,7 @@ from syne_tune.optimizer.schedulers.single_objective_scheduler import (
 )
 from syne_tune.config_space import Float
 from synetune_utils import LLMSearcher, save_results
-from mooLLM.utils.logger import LOGGING_CONFIG
+from HOLLM.utils.logger import LOGGING_CONFIG
 
 logging.config.dictConfig(config=LOGGING_CONFIG)
 logger = logging.getLogger("mooLLM")

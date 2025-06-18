@@ -1,3 +1,41 @@
+Metadata-Version: 2.4
+Name: HOLLM
+Version: 1.0.0
+Summary: HOLLM: Improving LLM-based Global Optimization with Search Space Partitioning
+Author: Andrej Schwanke, Lyubomir Ivanov, Arber Zela, David Salinas, Fabio Ferreira, Aaron Klein, Frank Hutter
+License: MIT
+Keywords: llm,optimization,black-box optimization,hyperparameter optimization,global optimization,search space partitioning
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Science/Research
+Classifier: Topic :: Scientific/Engineering :: Artificial Intelligence
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.11
+Requires-Python: >=3.11
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: numpy
+Requires-Dist: langchain
+Requires-Dist: pandas
+Requires-Dist: openai
+Requires-Dist: nashpobench2api
+Requires-Dist: huggingface_hub
+Requires-Dist: transformers
+Requires-Dist: scikit-learn
+Requires-Dist: scikit-optimize
+Requires-Dist: scipy
+Requires-Dist: tiktoken
+Requires-Dist: torch
+Requires-Dist: ConfigSpace
+Requires-Dist: pymoo==0.6.0
+Requires-Dist: paretoset
+Requires-Dist: google-generativeai
+Requires-Dist: groq
+Requires-Dist: whittle
+Requires-Dist: accelerate
+Requires-Dist: seaborn
+Requires-Dist: autoawq
+Dynamic: license-file
+
 # HOLLM: Improving LLM-based Global Optimization with Search Space Partitioning
 <p align="center">
   <img src="./logo.png" alt="HOLLM Logo" width="150" height="150">
@@ -13,9 +51,8 @@ This repository contains the official implementation of [HOLLM](https://arxiv.or
     conda activate HOLLM
     ```
 
-2.  Install package and install dependencies:
+2.  Install dependencies:
     ```bash
-    pip install -e .
     pip install -r requirements.txt
     ```
 
