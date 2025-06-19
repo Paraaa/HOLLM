@@ -65,10 +65,10 @@ HOLLM can be integrated into hyperparameter optimization workflows. The core com
 Here is a simple example on how to run:  
 
 ```python
-from mooLLM.builder import Builder
+from HOLLM.builder import Builder
 
 # To optimize a custom black box function you need to implement the `BENCHMARK` base class. Refer to the abstract base class for more details or the SyneTuneBenchmark for more details.
-from mooLLM.benchmark import BENCHMARK
+from HOLLM.benchmarks.benchmark import BENCHMARK
 
 class YourBenchmark(BENCHMARK):
     def __init__(self):
