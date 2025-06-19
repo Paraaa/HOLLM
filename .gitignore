@@ -17,7 +17,7 @@ launch.json
 
 # Never remote this.
 env.py
-mooLLM.egg-info
+HOLLM.egg-info
 
 # Maybe logging files will be needed in the future to keep track in the github repo
 *.log
