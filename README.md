@@ -102,7 +102,8 @@ class YourBenchmark(BENCHMARK):
 
 
 ```python
-# You need to define a config for the builder to build the instance of the optimization strategy. Refer to the builder class and the synetune implementation in synetune_utils.py for more details.
+# You need to define a config for the builder to build the instance of the optimization strategy. 
+# Refer to the builder class and the synetune implementation in synetune_utils.py for more details.
 config = {...}
 builder: Builder = Builder(config=config, benchmark=YourBenchmark())
 instance = builder.build() # This returns a optimization_strategy instance
