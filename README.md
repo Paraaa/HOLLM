@@ -19,9 +19,13 @@ This repository contains the official implementation of [HOLLM](https://arxiv.or
     pip install -r requirements.txt
     ```
 
-3. Install [SyneTune](https://github.com/syne-tune/syne-tune) locally and switch to the `llmkd` branch.
+3. Install [SyneTune](https://github.com/syne-tune/syne-tune) locally and switch to the `llmkd` branch. Note that you also need to install the following dependencies from SyneTune:
+    ```bash
+    pip install -r requirements-bore.txt
+    pip install -r requirements-botorch.txt
+    ```
 
-3.  Set the required API keys as environment variables in your shell configuration (for example, in your `~/.bashrc` or `~/.zshrc`):
+4.  Set the required API keys as environment variables in your shell configuration (for example, in your `~/.bashrc` or `~/.zshrc`):
 
     ```bash
     export OPEN_AI_API_KEY="<YOUR_OPEN_AI_API_KEY>"
