@@ -23,6 +23,7 @@ This repository contains the official implementation of [HOLLM](https://arxiv.or
     ```bash
     pip install -r requirements-bore.txt
     pip install -r requirements-botorch.txt
+    pip install -r requirements-kde.txt
     ```
 
 4.  Set the required API keys as environment variables in your shell configuration (for example, in your `~/.bashrc` or `~/.zshrc`):
@@ -103,7 +104,7 @@ class YourBenchmark(BENCHMARK):
 
 ```python
 # You need to define a config for the builder to build the instance of the optimization strategy. 
-# Refer to the builder class and the synetune implementation in synetune_utils.py for more details.
+# **Refer** to the builder class and the synetune implementation in synetune_utils.py for more details.
 config = {...}
 builder: Builder = Builder(config=config, benchmark=YourBenchmark())
 instance = builder.build() # This returns a optimization_strategy instance
