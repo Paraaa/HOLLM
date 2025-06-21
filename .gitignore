@@ -4,6 +4,7 @@
 *.pyc
 input.txt
 /test/*
+/.vscode
 
 # Cluster specific
 /hub/*
