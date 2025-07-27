@@ -19,6 +19,9 @@ class ScoreRegionACQ(RegionACQ):
                 f"Requested number of regions ({num_regions}) exceeds available regions ({len(regions)}). Returning all regions."
             )
             return regions
+        if not regions:
+            logger.warning("No regions available for selection.")
+            return []
         K = len(regions)
         logger.debug(f"Number of regions: {K}")
         alpha = self.scheduler.get_value() if self.scheduler else self.alpha

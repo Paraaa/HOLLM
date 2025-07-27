@@ -27,6 +27,10 @@ logging.config.dictConfig(config=LOGGING_CONFIG)
 logger = logging.getLogger("mooLLM")
 
 
+from syne_tune.optimizer.schedulers.smac_scheduler import SMACScheduler
+from syne_tune.optimizer.baselines import SMAC
+
+
 def run(
     method_names,
     benchmark_names,
@@ -76,7 +80,7 @@ def run(
             }
             for _ in range(num_random_candidates)
         ]
-        if method not in ["LLMKD", "LLM"]:
+        if method not in ["LLMKD", "LLM", "SMAC"]:
             scheduler = methods[method](
                 MethodArguments(
                     config_space=backend.blackbox.configuration_space,
@@ -90,6 +94,14 @@ def run(
                     points_to_evaluate=points_to_evaluate,
                 )
             )
+        elif method in ["SMAC"]:
+            scheduler = SMACScheduler(
+                    config_space=backend.blackbox.configuration_space,
+                    metric=benchmark.metric,
+                    do_minimize=benchmark.mode == "min",
+                    random_seed=seed,
+                    points_to_evaluate=points_to_evaluate,
+                )
         else:
             # LLMKD uses its own custom searcher
             args = MethodArguments(
@@ -132,25 +144,35 @@ def run(
         stop_criterion = StoppingCriterion(
             max_num_evaluations=benchmark.max_num_evaluations
         )
-
-        tuner = Tuner(
-            trial_backend=backend,
-            scheduler=scheduler,
-            stop_criterion=stop_criterion,
-            n_workers=n_workers,
-            sleep_time=0,
-            callbacks=[SimulatorCallback()],
-            # results_update_interval=600,
-            # print_update_interval=30,
-            tuner_name=f"results/{method}-{seed}-{benchmark_name}".replace("_", "-"),
-            save_tuner=False,
-            suffix_tuner_name=False,
-            metadata={
-                "seed": seed,
-                "algorithm": method,
-                "benchmark": benchmark_name,
-            },
-        )
+        if method in ["SMAC"]:
+            tuner = Tuner(
+                scheduler=scheduler,
+                trial_backend=backend,
+                n_workers=4,
+                results_update_interval=10,
+                stop_criterion=stop_criterion,
+                sleep_time=0,
+                callbacks=[SimulatorCallback()],
+            )
+        else:
+            tuner = Tuner(
+                trial_backend=backend,
+                scheduler=scheduler,
+                stop_criterion=stop_criterion,
+                n_workers=n_workers,
+                sleep_time=0,
+                callbacks=[SimulatorCallback()],
+                # results_update_interval=600,
+                # print_update_interval=30,
+                tuner_name=f"results/{method}-{seed}-{benchmark_name}".replace("_", "-"),
+                save_tuner=False,
+                suffix_tuner_name=False,
+                metadata={
+                    "seed": seed,
+                    "algorithm": method,
+                    "benchmark": benchmark_name,
+                },
+            )
         tuner.run()
         exp_names.append(tuner.name)
         save_results(

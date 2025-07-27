@@ -24,3 +24,5 @@ HOLLM.egg-info
 *.log
 *.mooLLM
 std.out
+
+smac3_output

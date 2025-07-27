@@ -86,15 +86,15 @@
 #     --data_path ./results/ZDT2/ \
 #     --filename "ZDT2"
 
-python ./plot/plot_hv_over_time.py \
-    --benchmark ZDT \
-    --title "Hypervolume (ZDT3)" \
-    --filter "zdt3" \
-    --columns "F1,F2" \
-    --trials 60 \
-    --data_path ./results/ZDT3/ \
-    --filename "ZDT3"\
-    --blacklist "QwQ-32B,Legacy-Prompt,mooLLM-Int-ToT (Gemini 1.5 Flash),RS,NSGA2,RSBO,LSBO,GPT-4o Mini"
+# python ./plot/plot_hv_over_time.py \
+#     --benchmark ZDT \
+#     --title "Hypervolume (ZDT3)" \
+#     --filter "zdt3" \
+#     --columns "F1,F2" \
+#     --trials 60 \
+#     --data_path ./results/ZDT3/ \
+#     --filename "ZDT3"\
+#     --blacklist "QwQ-32B,Legacy-Prompt,mooLLM-Int-ToT (Gemini 1.5 Flash),RS,NSGA2,RSBO,LSBO,GPT-4o Mini"
 
 
 # python ./plot/plot_hv_over_time.py \

@@ -18,6 +18,7 @@ plt.rcParams.update(
 
 COLORS = {
     # Our methods
+    "SMAC": "red",
     "RS": "dodgerblue",
     "REA": "sienna",
     "BORE": "darkcyan",
@@ -52,6 +53,7 @@ COLORS = {
 }
 MARKERS = {
     # Our methods
+    "SMAC": "o",
     "RS": "x",
     "REA": "*",
     "BORE": "s",
@@ -81,6 +83,7 @@ MARKERS = {
 }
 LSTYLE = {
     # Our methods
+    "SMAC": "solid",
     "RS": "solid",
     "REA": "solid",
     "BORE": "solid",
@@ -110,6 +113,7 @@ LSTYLE = {
 }
 LABEL = {
     # Our methods
+    "SMAC": "SMAC",
     "RS": "RS",
     "REA": "RE",
     "BORE": "BORE",
@@ -158,7 +162,6 @@ def create_fval_over_time_plot(
 
     # Get methods and sort them alphabetically and move everything that starts with LLM to the end
     methods = sorted(data["mean"].keys(), key=lambda x: (x.startswith("LLM"), x))
-    print(methods)
     for i, method in enumerate(methods):
         print(f"Plotting: {method}")
         mean_values = (
@@ -368,7 +371,6 @@ def main():
             else:
                 print(f"Filtered out method: {method} due to blacklist")
         method_dfs = filtered_dfs
-
     # Calculate the max and min values for each columns across all dataframes
     # 2. extract the min and max values for each column
     min_max_values = {

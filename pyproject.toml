@@ -7,7 +7,7 @@ name = "HOLLM"
 version = "1.0.0"
 description = "HOLLM: Improving LLM-based Global Optimization with Search Space Partitioning"
 readme = "README.md"
-requires-python = ">=3.11"
+requires-python = ">=3.10"
 license = {text = "MIT"}
 authors = [
     {name = "Andrej Schwanke"},

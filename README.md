@@ -3,7 +3,7 @@
   <img src="./logo.png" alt="HOLLM Logo" width="150" height="150">
 </p>
 
-This repository contains the official implementation of [HOLLM](https://arxiv.org/abs/2505.21372v1) *(Hierarchical Optimization with Large Language Models)*. 
+This repository contains the official implementation of [HOLLM](https://arxiv.org/abs/2505.21372v1) *(Hierarchical Optimization with Large Language Models)*.
 
 ## Installation (Python 3.11)
 
@@ -24,6 +24,7 @@ This repository contains the official implementation of [HOLLM](https://arxiv.or
     pip install -r requirements-bore.txt
     pip install -r requirements-botorch.txt
     pip install -r requirements-kde.txt
+    pip install -r requirements-smac.txt
     ```
 
 4.  Set the required API keys as environment variables in your shell configuration (for example, in your `~/.bashrc` or `~/.zshrc`):
@@ -58,12 +59,12 @@ Please inspect the shell scripts for details on the specific configurations and 
 
 
 ## How to use HOLLM
-HOLLM can be integrated into hyperparameter optimization workflows. The core component is the `mooLLM` class, which is configured and instantiated using a `Builder`. The package can be installed locally using: 
+HOLLM can be integrated into hyperparameter optimization workflows. The core component is the `mooLLM` class, which is configured and instantiated using a `Builder`. The package can be installed locally using:
    ```bash
    pip install -e .
    ```
 
-Here is a simple example on how to run:  
+Here is a simple example on how to run:
 
 ```python
 from HOLLM.builder import Builder
@@ -74,27 +75,27 @@ from HOLLM.benchmarks.benchmark import BENCHMARK
 class YourBenchmark(BENCHMARK):
     def __init__(self):
         super().__init__()
-        
+
     def generate_initialization(self, n_points: int, **kwargs):
         # Return list of n_points configuration dictionaries
         pass
-        
+
     def evaluate_point(self, point, **kwargs) -> Dict:
         # Return evaluation metrics for the given point
         pass
-        
+
     def get_few_shot_samples(self, **kwargs):
         # Return list of (config, evaluation) tuples for prompting
         pass
-        
+
     def get_metrics_ranges(self, **kwargs):
         # Return dict mapping metric names to their [min, max] ranges
         pass
-        
+
     def is_valid_candidate(self, candidate: Dict) -> bool:
         # Validate candidate configuration
         pass
-        
+
     def is_valid_evaluation(self, evaluation: Dict) -> bool:
         # Validate evaluation results
         pass
@@ -103,7 +104,7 @@ class YourBenchmark(BENCHMARK):
 
 
 ```python
-# You need to define a config for the builder to build the instance of the optimization strategy. 
+# You need to define a config for the builder to build the instance of the optimization strategy.
 # **Refer** to the builder class and the synetune implementation in synetune_utils.py for more details.
 config = {...}
 builder: Builder = Builder(config=config, benchmark=YourBenchmark())
@@ -114,7 +115,7 @@ instance.optimize() # Runs the optimization loop
 A list of available setting for the config can be listed with:
 ```bash
 python main.py --help
-``` 
+```
 or in the `Builder(...)` implementation.
 
 ## License
