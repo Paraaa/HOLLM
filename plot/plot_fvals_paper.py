@@ -160,6 +160,10 @@ def create_fval_over_time_plot(
     # Create figure with appropriate size for single-column journals
     fig, ax = plt.subplots(figsize=(8, 6))
 
+    final_values = {
+
+    }
+
     # Get methods and sort them alphabetically and move everything that starts with LLM to the end
     methods = sorted(data["mean"].keys(), key=lambda x: (x.startswith("LLM"), x))
     for i, method in enumerate(methods):
@@ -168,6 +172,11 @@ def create_fval_over_time_plot(
             -1 * data["mean"][method]
         )  # Negate the mean values to flip the growth direction in the plot
         std_values = 1.96 * data["std"][method] / data["num_seeds"]  # Standard error
+
+        final_values[method] = {
+            "mean": mean_values[-1],
+            "std": std_values[-1],
+        }
         trials = range(len(mean_values))
 
         label = LABEL[method]
@@ -228,6 +237,9 @@ def create_fval_over_time_plot(
         dir_path = f"{path}/{filename}.{file_type}"
         os.makedirs(os.path.dirname(dir_path), exist_ok=True)
         plt.savefig(dir_path, dpi=300, bbox_inches="tight")
+
+    with(open(f"final_values_{benchmark}.json", "w")) as f:
+        json.dump(final_values, f, indent=4)
 
     plt.close()
 
