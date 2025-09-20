@@ -48,7 +48,7 @@ The evaluations and experiments presented in the accompanying paper can be repro
     ```bash
     ./experiments/run_fcnet.sh
     ```
--   **NB201 Benchmarks:** For NB201 we opted for a different prompting strategy. Implementation details can be found in this repository: <Anonym>
+-   **NB201 Benchmarks:** For NB201 we opted for a different prompting strategy. Implementation details can be found in this repository: Anonym
 
 
 - **Run Real World Benchmarks:** For Penicillin, CarSideImpact and VehicleSafety run the `run_real_world.sh` script:
