@@ -5,6 +5,8 @@
 input.txt
 /test/*
 /.vscode
+./results/*
+
 
 # Cluster specific
 /hub/*
