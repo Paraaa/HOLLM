@@ -3,7 +3,7 @@ import time
 import tiktoken
 
 """
-Original implementation taken from the original mooLLM repository: https://github.com/tennisonliu/LLAMBO
+Original implementation taken from the original LLAMBO repository: https://github.com/tennisonliu/LLAMBO
 """
 logger = logging.getLogger("RateLimiter")
 
@@ -52,13 +52,13 @@ class RateLimiter:
         self.request_count += 1
 
         if self.request_count >= self.max_requests:
-            logger.debug(f"Sleeping for 60s to avoid hitting the request limit...")
+            logger.debug("Sleeping for 60s to avoid hitting the request limit...")
             time.sleep(61)
             self.request_count = 0
 
         # If the sum of tokens used in the current time frame exceeds the max tokens
         if sum(self.tokens_used) > self.max_tokens:
-            logger.debug(f"Sleeping for 60s to avoid hitting the token limit...")
+            logger.debug("Sleeping for 60s to avoid hitting the token limit...")
             time.sleep(61)
             # Clear the old requests after waking up
             self.timestamps.clear()
