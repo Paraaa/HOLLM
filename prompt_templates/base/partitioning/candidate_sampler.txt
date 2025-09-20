@@ -20,6 +20,10 @@ Generate $target_number_of_candidates new architecture configurations that:
 2. Are different from all previously evaluated architectures
 3. Satisfy all the specified constraints: $region_constraints
 
+When the region has negative constraints, make sure to take this into account when proposing a candidate value.
+Before providing the final output, you MUST perform a check to ensure every single parameter in your proposed configurations strictly adheres to the constraints specified.
+Any configuration with a value outside its valid range is incorrect and will be rejected.
+
 ## Output Format
 Each configuration has to follow this format:
 

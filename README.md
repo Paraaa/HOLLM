@@ -50,6 +50,12 @@ The evaluations and experiments presented in the accompanying paper can be repro
     ```
 -   **NB201 Benchmarks:** For NB201 we opted for a different prompting strategy. Implementation details can be found in this repository: [HOLLM](https://github.com/automl/hollm/tree/main )
 
+
+- **Run Real World Benchmarks:** For Penicillin, CarSideImpact and VehicleSafety run the `run_real_world.sh` script:
+    ```bash
+    ./experiments/run_real_world.sh
+    ```
+
 -   **Ablation Studies:** To run ablation studies, use the `run_ablations.sh` script.
     ```bash
     ./experiments/run_ablations.sh

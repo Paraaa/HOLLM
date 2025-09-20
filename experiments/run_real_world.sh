@@ -1,4 +1,4 @@
-benchmarks=("ackley" "hartmann3" "hartmann6" "levy" "rosenbrock" "rastrigin")
+benchmarks=("penicillin" "vehicle_safety" "car_side_impact")
 model="gemini-2.0-flash"
 
 # # Run the vanilla method for each benchmark

@@ -54,6 +54,34 @@ def run(
             config_space = {f"x{i}": Float(-5.12, 5.12) for i in range(10)}
         elif "rosenbrock" in benchmark_name:
             config_space = {f"x{i}": Float(-2.048, 2.048) for i in range(8)}
+        elif "penicillin" in benchmark_name:
+            config_space = {
+                "x0": Float(60.0, 120.0),
+                "x1": Float(0.05, 18.0),
+                "x2": Float(293.0, 303.0),
+                "x3": Float(0.05, 18.0),
+                "x4": Float(0.01, 0.5),
+                "x5": Float(500.0, 700.0),
+                "x6": Float(5.0, 6.5),
+            }
+        elif "car_side_impact" in benchmark_name:
+            config_space = {
+                "x0": Float(0.5, 1.5),
+                "x1": Float(0.45, 1.35),
+                "x2": Float(0.5, 1.5),
+                "x3": Float(0.5, 1.5),
+                "x4": Float(0.875, 2.625),
+                "x5": Float(0.4, 1.2),
+                "x6": Float(0.4, 1.2),
+            }
+        elif "vehicle_safety" in benchmark_name:
+            config_space = {
+                "x0": Float(1.0, 3.0),
+                "x1": Float(1.0, 3.0),
+                "x2": Float(1.0, 3.0),
+                "x3": Float(1.0, 3.0),
+                "x4": Float(1.0, 3.0),
+            }
         else:
             raise ValueError(f"Unknown benchmark name: {benchmark_name}")
 

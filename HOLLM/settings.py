@@ -30,6 +30,7 @@ from HOLLM.schedulers.cosine_decay_scheduler import CosineDecayScheduler
 MODELS = {
     "gpt-4o-mini": GPT("gpt-4o-mini"),
     "gemini-1-5-flash": GEMINI("gemini-1.5-flash"),
+    "gemini-2.0-flash": GEMINI("gemini-2.0-flash"),
 }
 
 WARMSTARTERS = {

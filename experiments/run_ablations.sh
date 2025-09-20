@@ -1,10 +1,9 @@
 benchmarks_synth=("levy")
 benchmarks_fcnet=("fcnet-naval" "fcnet-parkinsons" "fcnet-protein" "fcnet-slice")
-model="gemini-1-5-flash"
+model="gemini-2.0-flash"
 
 
 # Ablations
-
 # 1. leaf size. We use fixed leaf sizes here.
 leaf_sizes=(1 2.5 5 10) # 1, 0.25 * d, 0.5 * d, d for levy
 
