@@ -124,6 +124,21 @@ python main.py --help
 ```
 or in the `Builder(...)` implementation.
 
+
+
+## Citation
+Is you use this work, please cite related resources with the following BibTex entry:
+```
+@inproceedings{schwanke2026improving,
+   title       = {Improving {LLM}-based Global Optimization with Search Space Partitioning},
+   author      = {Andrej Schwanke and Lyubomir Ivanov and David Salinas and Fabio Ferreira and Aaron Klein and Frank Hutter and Arber Zela},
+   booktitle   = {The Fourteenth International Conference on Learning Representations},
+   year        = {2026},
+   url         = {https://openreview.net/forum?id=y6nhcCdQYd}
+}
+```
+
+****
 ## License
 
 This project is licensed under the terms of the MIT License. See the `LICENSE` file for more details.
